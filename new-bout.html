@@ -11,17 +11,17 @@
   <h1>Add a bout</h1>
   <form action="somewhere.else" method="post">
     <label for="opponents">Opponents</label>
-    <select id="opponents" name="opponents">
+    <select id="opponents" name="opponents" required>
       <option value="add-an-opponent">Add an Opponent</option>
     </select>
     <fieldset>
       <legend>Final Score</legend>
 
       <label for="my-score">My Score</label>
-      <input type="number" id="my-score" name="my-score" min="0" max="15" step="1">
+      <input type="number" id="my-score" name="my-score" min="0" max="15" step="1" required>
 
       <label for="opponent-score">Opponent Score</label>
-      <input type="number" id="opponent-score" name="opponent-score" min="0" max="15" step="1">
+      <input type="number" id="opponent-score" name="opponent-score" min="0" max="15" step="1" required>
     </fieldset>
     <fieldset>
       <legend>Cards</legend>
