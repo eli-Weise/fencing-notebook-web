@@ -42,11 +42,11 @@ function Bout(opponent, winner, myScore, opponentScore, myCards, opponentCards, 
 
   this.getWinner = function () {
     if (this.winner) {
-      console.log(winner + "won!");
+      return winner + "won!";
     } else if (myScore >= opponentScore) {
-      console.log("I won!");
+      return "I won!";
     } else {
-      console.log(opponent + "won!");
+      returnopponent + "won!";
     }
   }
 }
