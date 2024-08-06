@@ -1,26 +1,4 @@
 /**
- * Fencer object constructor
- * @param {string} firstName 
- * @param {string} lastName 
- * @param {Enumerator} rating 
- * @param {Enumerator} hand 
- * @param {Enumerator} grip 
- * @param {number} birthYear 
- * @param {Enumerator} height 
- * @param {string} notes 
- */
-function Fencer(firstName, lastName, rating, hand, grip, birthYear, height, notes) {
-  this.firstName = firstName;
-  this.lastName = lastName;
-  this.rating = rating;
-  this.hand = hand;
-  this.grip = grip;
-  this.birthYear = birthYear;
-  this.height = height;
-  this.notes = notes;
-}
-
-/**
  * Bout object constructor
  * @param {Fencer} opponent 
  * @param {number} myScore 

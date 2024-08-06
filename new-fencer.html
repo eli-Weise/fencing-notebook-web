@@ -9,14 +9,14 @@
 
 <body>
   <h1>Add a Fencer</h1>
-  <form action="somewhere.else" method="post">
+  <form action="somewhere.else" method="post" id="add-an-opponent">
     <label for="first_name">First Name:</label>
     <input type="text" id="first_name" name="first_name" placeholder="Eli">
     <label for="last_name">Last Name:</label>
     <input type="text" id="last_name" name="last_name" placeholder="Weise" required>
     
     <label for="rating">Rating</label>
-    <select name="rating">
+    <select name="rating" id="rating">
       <option value="empty">Choose a rating</option>
       <option value="U">U</option>
       <option value="E">E</option>
@@ -54,9 +54,11 @@
 
     <label for="notes">Initial Notes</label>
     <textarea id="notes" name="notes"></textarea>
-    <button type="submit">Submit</button>
+    <button type="submit" id="submit">Submit</button>
     <button type="reset">Reset</button>
   </form>
+  <div id="fencer-list"></div>
+  <script src="fencers.js"></script>
 </body>
 
 </html>
