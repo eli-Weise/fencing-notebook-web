@@ -18,12 +18,22 @@ function Fencer(firstName, lastName, rating, hand, grip, birthYear, height, note
   this.birthYear = birthYear;
   this.height = height;
   this.notes = notes;
+
+  this.toString = function () {
+    return lastName.toUpperCase() + " " + firstName +
+      ", rating: " + rating +
+      ", hand: " + hand +
+      ", grip: " + grip +
+      ", birth year: " + birthYear +
+      ", height: " + height +
+      ", notes: " + notes;
+  }
 }
 
 const opponents = [];
 
 
-function addFencer(fencer){
+function addFencer(fencer) {
   opponents.push(fencer);
 }
 
@@ -33,17 +43,25 @@ function displayFencers() {
 
   opponents.forEach((fencer) => {
     const newFencer = document.createElement("div");
-    newFencer.innerText = fencer.toString();
+
+    const fencerInfo = document.createElement("div");
+    fencerInfo.innerText = fencer.toString();
+    newFencer.appendChild(fencerInfo);
+
+    const editFencer = document.createElement("button");
+    editFencer.innerText = "edit";
+    editFencer.classList.add("edit-fencer");
+    newFencer.appendChild(editFencer);
+
 
     fencerList.appendChild(newFencer);
   })
-
-  console.log("worked?");
 }
 
 let submitButton = document.querySelector("#add-an-opponent");
 
 submitButton.addEventListener("submit", (event) => {
+
 
   const firstName = document.querySelector("#first_name").value;
   const lastName = document.querySelector("#last_name").value;
@@ -54,12 +72,14 @@ submitButton.addEventListener("submit", (event) => {
   const height = document.querySelector("#height").value;
   const notes = document.querySelector("#notes").value;
 
-  // console.log(firstName + lastName + rating + hand + grip + yob + height + notes);
+  console.log(firstName + lastName + rating + hand + grip + yob + height + notes);
 
   const fencer = new Fencer(firstName, lastName, rating, hand, grip, yob, height, notes);
 
   addFencer(fencer);
   displayFencers();
+
+  submitButton.reset();
 
 
   event.preventDefault();
