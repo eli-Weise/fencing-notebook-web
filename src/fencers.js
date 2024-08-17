@@ -1,8 +1,13 @@
 const firstName = document.querySelector("#first_name");
 const lastName = document.querySelector("#last_name");
 const rating = document.querySelector("#rating");
+
+//Currently only returns the first value, whether selected or not, will fix once
+//using a database
 const hand = document.querySelector("[name='hand']");
 const grip = document.querySelector("[name='grip']");
+
+
 const yob = document.querySelector("#yob");
 const height = document.querySelector("#height");
 const notes = document.querySelector("#notes");
@@ -66,8 +71,6 @@ function displayFencers() {
   })
 }
 
-let fencerForm = document.querySelector("#add-an-opponent");
-
 function editFencer(fencer, i) {
   const fencerEdit = document.createElement("button");
   fencerEdit.innerText = "edit";
@@ -90,7 +93,11 @@ function editFencer(fencer, i) {
   return fencerEdit;
 }
 
+let fencerForm = document.querySelector("#add-an-opponent");
+
 fencerForm.addEventListener("submit", (event) => {
+  event.preventDefault();
+
 
   console.log(firstName.value + lastName.value + rating.value + hand.value + grip.value + yob.value + height.value + notes.value);
 
@@ -100,7 +107,4 @@ fencerForm.addEventListener("submit", (event) => {
   displayFencers();
 
   fencerForm.reset();
-
-
-  event.preventDefault();
 })
